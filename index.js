@@ -40,7 +40,11 @@ const worker2 = new Worker(
   }
 );
 
-schedule.scheduleJob("*/14 * * * *", console.log("Server restarted"));
+const restart = () => {
+  console.log("server restarted");
+};
+
+schedule.scheduleJob("*/14 * * * *", restart);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
