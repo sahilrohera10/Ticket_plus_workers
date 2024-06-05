@@ -1,6 +1,8 @@
 const { Worker } = require("bullmq");
 const IORedis = require("ioredis");
 const express = require("express");
+import schedule from "node-schedule";
+
 const app = express();
 
 require("dotenv").config({ path: `${process.cwd()}/.env` });
@@ -37,6 +39,8 @@ const worker2 = new Worker(
     connection,
   }
 );
+
+schedule.scheduleJob("*/14 * * * *", console.log("Server restarted"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
