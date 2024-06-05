@@ -1,5 +1,7 @@
 const { Worker } = require("bullmq");
 const IORedis = require("ioredis");
+const express = require("express");
+const app = express();
 
 require("dotenv").config({ path: `${process.cwd()}/.env` });
 
@@ -35,3 +37,5 @@ const worker2 = new Worker(
     connection,
   }
 );
+
+const PORT = process.env.PORT || 3000;
