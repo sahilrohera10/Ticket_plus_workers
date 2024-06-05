@@ -1,7 +1,7 @@
 const { Worker } = require("bullmq");
 const IORedis = require("ioredis");
 const express = require("express");
-import schedule from "node-schedule";
+const schedule = require("node-schedule");
 
 const app = express();
 
