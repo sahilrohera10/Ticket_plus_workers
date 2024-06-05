@@ -44,7 +44,7 @@ const restart = () => {
   console.log("server restarted");
 };
 
-schedule.scheduleJob("*/14 * * * *", restart);
+schedule.scheduleJob("*/14 * * * *", restart());
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
